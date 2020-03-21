@@ -4,5 +4,6 @@
 */
 
 module.exports = (req, res, next) => {
+  if(req.headers.token) return next();
   res.status(401).json({ you: 'shall not pass!' });
 };
